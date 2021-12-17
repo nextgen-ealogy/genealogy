@@ -1,4 +1,8 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "api": "packages/api",
+    "front": "packages/front",
+    "front-e2e": "packages/front-e2e"
+  }
 }
