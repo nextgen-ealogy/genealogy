@@ -3,6 +3,7 @@
   "projects": {
     "api": "packages/api",
     "front": "packages/front",
-    "front-e2e": "packages/front-e2e"
+    "front-e2e": "packages/front-e2e",
+    "models": "packages/models"
   }
 }
