@@ -3,6 +3,7 @@ import {QueryClient, QueryClientProvider} from "react-query";
 import {useForm} from "react-hook-form";
 import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
+import { ChakraProvider, Grid, GridItem } from '@chakra-ui/react'
 
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
@@ -52,31 +53,41 @@ export function App() {
 
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {t('Welcome to React')}
+    <ChakraProvider>
+      <Grid templateColumns='repeat(5, 1fr)' gap={6}>
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+      </Grid>
+      <QueryClientProvider client={queryClient}>
+        {t('Welcome to React')}
 
-      <form onSubmit={handleSubmit(onSubmitHandler)} noValidate>
-        <label>
-          Email:
-          <input {...register("email")} placeholder="email" type="email" required/>
-          <p>{errors["email"]?.message}</p>
-        </label>
-        <label>
-          Password
-          <input
-            {...register("password")}
-            placeholder="password"
-            type="password"
-            required
-          />
-          <p>{errors["password"]?.message}</p>
-        </label>
+        <form onSubmit={handleSubmit(onSubmitHandler)} noValidate>
+          <label>
+            Email:
+            <input {...register("email")} placeholder="email" type="email" required/>
+            <p>{errors["email"]?.message}</p>
+          </label>
+          <label>
+            Password
+            <input
+              {...register("password")}
+              placeholder="password"
+              type="password"
+              required
+            />
+            <p>{errors["password"]?.message}</p>
+          </label>
 
 
-        <button type="submit">Sign in</button>
-      </form>
-      <NxWelcome title="front"/>
-    </QueryClientProvider>
+          <button type="submit">Sign in</button>
+        </form>
+        <NxWelcome title="front"/>
+      </QueryClientProvider>
+    </ChakraProvider>
+
   );
 }
 
