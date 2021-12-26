@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@genealogy/models": ["packages/models/src/index.ts"]
+      "@genealogy/models": ["packages/models/src/index.ts"],
+      "@genealogy/photos": ["packages/photos/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
