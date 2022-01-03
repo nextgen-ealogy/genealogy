@@ -1,9 +1,13 @@
 import {Controller, Get, Param, Query} from "@nestjs/common";
 import {Photo} from "@genealogy/models";
+import {ConfigService} from "@genealogy/config";
 
 @Controller("/photos")
 export class PhotosController {
 
+  constructor(private readonly configService: ConfigService) {
+    console.log(this.configService.get("ENV"))
+  }
   @Get("/")
   getAllPhotos(
     @Query("lat") lat: number,
