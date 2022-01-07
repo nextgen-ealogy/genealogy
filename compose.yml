@@ -1,5 +1,14 @@
 version: '2.2'
 services:
+  neo4j:
+    image: neo4j
+    environment:
+      - NEO4J_AUTH=none
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - data_neo4j:/usr/share/neo4j/data
   es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
     container_name: es01
@@ -22,6 +31,8 @@ services:
 
 volumes:
   data01:
+    driver: local
+  data_neo4j:
     driver: local
 networks:
   elastic:
