@@ -4,6 +4,7 @@ import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
 import { ChakraProvider, Grid, GridItem } from '@chakra-ui/react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
@@ -97,6 +98,7 @@ export function App() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
         </MapContainer>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </ChakraProvider>
 
