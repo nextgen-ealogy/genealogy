@@ -12,6 +12,7 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/swagger": "^5.1.5",
     "core-js": "^3.6.5",
     "framer-motion": "^4.1.17",
     "i18next": "^21.6.3",
@@ -26,6 +27,7 @@
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.0.0",
+    "swagger-ui-express": "^4.3.0",
     "tslib": "^2.0.0",
     "yup": "^0.32.11"
   },
