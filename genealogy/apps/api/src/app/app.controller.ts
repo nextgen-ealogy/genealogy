@@ -26,18 +26,8 @@ export class AppController {
   }
 
   async testNeo4j() {
-    const NEO4J_USER = this.configService.get<string>('NEO4J_USER');
-    const NEO4J_PASSWORD = this.configService.get<string>('NEO4J_PASSWORD');
-    const NEO4J_HOST = this.configService.get<string>('NEO4J_HOST');
-
-    const driver = neo4j.driver(
-      NEO4J_HOST,
-      neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWORD)
-    );
-
-    // Verify the connection details or throw an Error
-    await driver.verifyConnectivity();
-
+    
+    /*
     const person1Name = 'Alice';
     const person2Name = 'David';
 
@@ -51,7 +41,7 @@ export class AppController {
     const writeResult = await session.writeTransaction((tx) =>
       tx.run(writeQuery, { person1Name, person2Name })
     );
-    console.log(writeResult)
+    console.log(writeResult)*/
   }
 
   @Get()
