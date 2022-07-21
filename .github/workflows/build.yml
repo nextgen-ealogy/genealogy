@@ -13,6 +13,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Running unit test
         run: |
-          npm ci
-          npm test
+          npm --prefix genealogy ci
+          npm --prefix genealogy test
 
